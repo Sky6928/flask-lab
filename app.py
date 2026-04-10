@@ -15,5 +15,12 @@ def health():
         "status": "healthy"
     }), 200
 
+@app.route("/version")
+def version():
+    return jsonify({
+        "app": "flask-lab",
+        "version": "1.0.0"
+    }), 200
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=False)
